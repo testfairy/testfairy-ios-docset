@@ -3,14 +3,14 @@ language: objective-c
 osx_image: xcode7
 
 install:
-    - git clone "git://github.com/tomaz/appledoc.git" appledoc
-    - (cd appledoc; sudo sh install-appledoc.sh)
+  - git clone "git://github.com/tomaz/appledoc.git" appledoc
+  - (cd appledoc; sudo sh install-appledoc.sh)
 	
 script:
-    - # create appledoc
-    - appledoc --project-name TestFairy --project-company TestFairy --exit-threshold 100 TestFairy.h
-    - DOCPATH=`grep -i path docset-installed.txt | cut -d" " -f2`
-    - (cd ${DOCPATH}/Contents/Resources/Documents; zip -rp9 ${TRAVIS_BUILD_DIR}/build/dist/TestFairySDK-${TRAVIS_TAG}-Docs.zip *)
-    - unzip -v ${TRAVIS_BUILD_DIR}/build/dist/TestFairySDK-${TRAVIS_TAG}-Docs.zip
+  - # create appledoc
+  - appledoc --project-name TestFairy --project-company TestFairy --exit-threshold 100 TestFairy.h
+  - DOCPATH=`grep -i path docset-installed.txt | cut -d" " -f2`
+  - (cd ${DOCPATH}/Contents/Resources/Documents; zip -rp9 ${TRAVIS_BUILD_DIR}/build/dist/TestFairySDK-${TRAVIS_TAG}-Docs.zip *)
+  - unzip -v ${TRAVIS_BUILD_DIR}/build/dist/TestFairySDK-${TRAVIS_TAG}-Docs.zip
     
 	
