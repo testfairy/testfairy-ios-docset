@@ -1,1 +1,2 @@
-# testfairy-ios-docsset
+# TestFairy iOS SDK DocSet
+
